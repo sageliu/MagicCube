@@ -275,23 +275,21 @@ div.btn{
     position: fixed;
     background-size: contain;
     z-index: 111;
+    border-radius: 50%;
+    bottom: 0.2rem;
 }
 
 .btnLeft{
-    bottom: 0.15rem;
-    left: 0.28rem;
-    background:url("../images/btnLeft.png") no-repeat;
+    left: 0.38rem;
+    background:url("../images/btnLeft.png") no-repeat center center;
 }
 .btnRight{
-    bottom: 0.15rem;
-    left: 0.95rem;
-    background:url("../images/btnRight.png") no-repeat;
+    left: 1.05rem;
+    background:url("../images/btnRight.png") no-repeat center center ;
 }
 .btnJump{
-
-    bottom: 0.2rem;
-    right: 0.1rem;
-    background:url("../images/btnJump.png") no-repeat;
+    right: 0.3rem;
+    background:url("../images/btnJump.png") no-repeat center center;
     background-size: auto;
 }
 

@@ -17,6 +17,7 @@ var user = document.getElementById('user');
 var btnLeft = document.getElementById("btnLeft");
 var btnRight = document.getElementById("btnRight");
 var btnJump = document.getElementById("btnJump");
+var footer=document.getElementById("footer");
 var step = 0.2;
 var jump = 0.35;
 /*
@@ -37,26 +38,49 @@ var jump = 0.35;
 var bg = document.getElementsByClassName("main")[0];
 function move(e) {
 var rem=6.4;
-    var posi=bg.style;
+    var index=1;
 
     if (e.target === btnLeft) {
-        var d=new Date();
-        console.log(d.getTime());
-        posi.left = parseFloat(Number(posi.left))/rem + step + "rem";
+        e.target.style.boxShadow=" 5px 5px 8px 0 #16D5B5";
+    this.timer21=window.setInterval(function () {
+        index++;
+        bg.style.left=index* step + "rem";
+        footer.style.left=index*step+"rem";
+
+},1000);
+
 
     } else if (e.target === btnRight) {
-        posi.left = parseFloat(Number(posi.left))/rem + step + "rem";
+        e.target.style.boxShadow=" 5px 5px 8px 0 #16D5B5";
+        this.timer22=window.setInterval(function () {
+            index++;
+            bg.style.left = -index* step + "rem";
+
+            //console.log(parseFloat(posi.left/rem )- step);
+        },1000);
 
     } else if (e.target === btnJump) {
+        e.target.style.boxShadow=" 5px 5px 8px 0 #16D5B5";
         e.target.onblur();
         user.className += "jump";
         setTimeout(function () {
         }, 1600);
     }
+    e.preventDefault();
+}
+function end(e){
+    if(e.target===btnLeft||e.target===btnRight||e.target===btnJump)
+    e.target.style.boxShadow="";
+    window.clearInterval(this.timer21);
+    this.timer21=null;
+    window.clearInterval(this.timer22);
+    this.timer22=null;
+    cur=parseFloat(bg.style.left);
 }
 
     document.addEventListener('touchstart', move, false);
 
+    document.addEventListener('touchend', end, false);
 
 
 
