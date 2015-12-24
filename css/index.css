@@ -273,23 +273,26 @@ div.btn{
     width: 0.5rem;
     height: 0.5rem;
     position: fixed;
-    bottom: 0.15rem;
     background-size: contain;
     z-index: 111;
 }
 
 .btnLeft{
+    bottom: 0.15rem;
     left: 0.28rem;
     background:url("../images/btnLeft.png") no-repeat;
 }
 .btnRight{
+    bottom: 0.15rem;
     left: 0.95rem;
     background:url("../images/btnRight.png") no-repeat;
 }
 .btnJump{
+
     bottom: 0.2rem;
-    right: 0.2rem;
+    right: 0.1rem;
     background:url("../images/btnJump.png") no-repeat;
+    background-size: auto;
 }
 
 
@@ -305,3 +308,16 @@ div.btn{
     bottom: 0.8rem;
     z-index: 100;
 }
+.jump {
+    animation: _jump 1.5s;
+}
+@keyframes _jump {
+    50% {
+        bottom: 0.37rem;
+    }
+    100% {
+        bottom:0;
+    }
+}
+
+
