@@ -262,9 +262,10 @@ div.brick {
     background: url("../images/brick.png") no-repeat;
     left: 7.2rem;
 }
-.brickbox3 {
+div.brick.brickbox3 {
     background: url("../images/brickbox1.png") no-repeat;
-    top: 0.8rem;
+    background-size: contain;
+    bottom: 1.2rem;
     left: 6.6rem;
 }
 /*下面的btn*/
