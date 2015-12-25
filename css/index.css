@@ -326,7 +326,10 @@ div.btn{
     }
 }
 .moveRightBg.moveRightFooter {
+    -webkit-animation: _moveRight 1.5s;
     animation: _moveRight 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 @keyframes _moveRight {
     50% {
