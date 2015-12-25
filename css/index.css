@@ -1,25 +1,31 @@
 html, body {
     background: #7287E0;
 }
-/*顶部的分数等样式*/
-.headerTop {
-    width: 100%;
-    height: 0.8rem;
-    margin: 0.1rem 0.3rem;
-    font-size: 0.25rem;
-    color: #fff;
-    font-family: "\5FAE\8F6F\96C5\9ED1", "microsoft yahei", "sans-serif";
-    font-weight: bold;
-    overflow: hidden;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 111;
-    /*display: flex;*/
-    /*justify-content: space-around;*/
-    /*align-items: baseline;*/
-}
+
+
+@media screen and(orientation: Landscape ){
+html,body{
+-webkit-transform: rotate(90deg);
+    }
+
+}.headerTop {
+     width: 100%;
+     height: 0.8rem;
+     margin: 0.1rem 0.3rem;
+     font-size: 0.25rem;
+     color: #fff;
+     font-family: "\5FAE\8F6F\96C5\9ED1", "microsoft yahei", "sans-serif";
+     font-weight: bold;
+     overflow: hidden;
+     text-align: center;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 111;
+     /*display: flex;*/
+     /*justify-content: space-around;*/
+     /*align-items: baseline;*/
+ }
 .headerTop ul {
     display: block;
     height: 100%;
@@ -297,7 +303,7 @@ div.btn{
 /*下面的小人*/
 .user {
     display: block;
-    background: url("../images/userRight.png") no-repeat;
+    background: url("../images/userRight.png") no-repeat center center;
     background-size: cover;
     width: 0.4rem;
     height: 0.34rem;
@@ -307,15 +313,27 @@ div.btn{
     z-index: 100;
 }
 .jump {
+    background: url("../images/userDumpRight.png") no-repeat center center;
+    background-size: contain;
     animation: _jump 1.5s;
 }
 @keyframes _jump {
     50% {
-        bottom: 0.37rem;
+        bottom: 1.17rem;
     }
     100% {
-        bottom:0;
+        bottom:0.8rem;
     }
 }
+.moveRightBg.moveRightFooter {
+    animation: _moveRight 1.5s;
+}
+@keyframes _moveRight {
+    50% {
 
+    }
+    100% {
+
+    }
+}
 

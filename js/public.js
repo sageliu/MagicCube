@@ -17,7 +17,10 @@ var rem=desW/100;
 if(winW>desW*1.5)winW=winH;
 //if(winW>desW)winW=desW;//如果是PC端，就不修改字体了
 //    winW=winW>desW?desW:winW;//也可以这么写
-document.documentElement.style.fontSize=winW/rem+"px";
+if(winW>winH){document.documentElement.style.fontSize=winW/rem+"px";}else{
+    document.documentElement.style.fontSize=140+"px";
+}
+
 
 
 
