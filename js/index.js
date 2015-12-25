@@ -1,11 +1,10 @@
-
 var user = document.getElementById('user');
 var btnLeft = document.getElementById("btnLeft");
 var btnRight = document.getElementById("btnRight");
 var btnJump = document.getElementById("btnJump");
 var footer = document.getElementById("footer");
-var oMove=document.styleSheets[1].cssRules[68];
-var obj={index:1,rem:6.4,step:0.35,jump:0.35};
+
+var obj = {index: 1, rem: 6.4, step: 0.35, jump: 0.35};
 //因为引用数据类型和基本数据类型的区别，所以将尤其index放在对象里。
 
 /*
@@ -24,60 +23,61 @@ var obj={index:1,rem:6.4,step:0.35,jump:0.35};
  3.4如果是brick3，则从里面出现一个金币或者蘑菇，出现的方式是1.5秒从brick3的位置向上慢慢出来，金币会消失，蘑菇会向右移动0.1rem/s，直到蘑菇的right>=遇到的第一个hose（其实这里是指定的）的left，会向左移动，如果移动到的left=0时，则remove这个蘑菇，如果中间人物的bottom=蘑菇的bottom，mRight>uLeft>mLeft||mRight>uRight>mLeft,那么蘑菇remove，人变大。
  */
 var bg = document.getElementsByClassName("main")[0];
-//bg.style.left =0;
-    function move(e) {
+bg.style.left=0;
+footer.style.left=0;
+var oMove = document.styleSheets[1].cssRules[69];
+function move(e) {
     e.preventDefault();
 
-
-    if (e.target === btnLeft) {
+        if (e.target === btnLeft) {
         e.target.style.boxShadow = " 5px 5px 8px 0 #16D5B5";
         this.timer21 = window.setInterval(function () {
-            obj.index+=0.5;
+            obj.index ++;
             bg.style.left = obj.index * obj.step + "rem";
             bg.style.webkit = "(transitionDuration: 1s)";
             footer.style.left = obj.index * obj.step + "rem";
-
         }, 1000);
-    } else if (e.target === btnRight) {
+    }
+    else if (e.target === btnRight) {
         e.target.style.boxShadow = " 5px 5px 8px 0 #16D5B5";
-        //user.className += " moveRightRight moveRightFooter";
-        if(/moveRightRight/.test(bg.className))return;
-        bg.className += " moveRightRight";
-        if(/moveRightFooter/.test(footer.className))return;
-        footer.className+=" moveRightFooter";
+        if (/moveRight$/.test(bg.className))return;
+        bg.className += " moveRight";
+        if (/moveRight$/.test(footer.className))return;
+        footer.className += " moveRight";
 
-        this.timer22 = window.setTimeout(function () {
-        oMove[0].style.left= obj.index * obj.step + "rem";
-        obj.index+=0.5;
-        console.log(obj.index);
-        console.log(oMove[0].style.left);
-        oMove[1].style.left= obj.index * obj.step + "rem";
-        console.log(oMove[1].style.left);
-            obj.index+=0.5;
-        }, 1000);
+        //this.timer22 = window.setInterval(function () {
+            oMove[0].style.left = -1 * obj.index * obj.step + "rem";
+            obj.index ++;
+            this.posi=oMove[1].style.left = -1 * obj.index * obj.step + "rem";
+            obj.index ++;
+        //}, 1000);
 
 //设置跳跃的时候更换为jump的样式。
     } else if (e.target === btnJump) {
         e.target.style.boxShadow = " 5px 5px 8px 0 #16D5B5";
-        if(/jump/.test(user.className))return;
+        if (/jump/.test(user.className))return;
         user.className += " jump";
         setTimeout(function () {
-            user.className ="user";
+            user.className = "user";
         }, 1000);
     }
-        //清除浏览器长按的样式。
+    //清除浏览器长按的样式。
 
 }
 function end(e) {
     if (e.target === btnLeft || e.target === btnRight || e.target === btnJump)
         e.target.style.boxShadow = "";
-    bg.className="main";
-    footer.className="footer";
+    bg.className = "main";
+    footer.className = "footer";
     window.clearInterval(this.timer21);
     this.timer21 = null;
-    window.clearTimeout(this.timer22);
-    this.timer22 = null;
-    cur = parseFloat(bg.style.left);
+    //window.clearInterval(this.timer22);
+    //this.timer22 = null;
+    bg.style.left=this.posi;
+    footer.style.left=this.posi;
+    console.log(bg.style.left);
+
+
 }
 
 document.addEventListener('touchstart', move, false);
