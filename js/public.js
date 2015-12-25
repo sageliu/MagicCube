@@ -21,6 +21,13 @@ if(winW>winH){document.documentElement.style.fontSize=winW/rem+"px";}else{
     document.documentElement.style.fontSize=140+"px";
 }
 
+var gameTime = document.querySelector(".gameTime");
+gameTime.innerHTML = 300;
+
+var timer1 = window.setInterval(function () {
+    gameTime.innerHTML < 290 ? window.clearInterval(timer1) : gameTime.innerHTML--;
+}, 1000);
+
 
 
 
