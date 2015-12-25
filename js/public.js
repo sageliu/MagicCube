@@ -5,6 +5,7 @@ window.onload= function () {
             //window.orientation="Landscape";
             console.log(1);
         }
+        window.screen.lockOrientation(["landscape-primary","landscape-secondary"]);
     })();
 };
 

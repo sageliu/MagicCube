@@ -4,7 +4,7 @@ var btnRight = document.getElementById("btnRight");
 var btnJump = document.getElementById("btnJump");
 var footer = document.getElementById("footer");
 
-var obj = {index: 0.5, rem: 6.4, step: 0.35};
+var obj = {index: 0.1, rem: 6.4, step: 0.35};
 //因为引用数据类型和基本数据类型的区别，所以将尤其index放在对象里。
 
 /*
@@ -32,7 +32,7 @@ function move(e) {
         if (e.target === btnLeft) {
         e.target.style.boxShadow = " 5px 5px 8px 0 #16D5B5";
         this.timer21 = window.setInterval(function () {
-            obj.index +=0.5;
+            obj.index +=0.1;
             bg.style.left = obj.index * obj.step + "rem";
             bg.style.webkit = "(transitionDuration: 1s)";
             footer.style.left = obj.index * obj.step + "rem";
@@ -47,9 +47,9 @@ function move(e) {
 
         //this.timer22 = window.setInterval(function () {
             oMove[0].style.left = -1 * obj.index * obj.step + "rem";
-            obj.index +=0.5;
+            obj.index +=0.1;
             this.posi=oMove[1].style.left = -1 * obj.index * obj.step + "rem";
-            obj.index +=0.5;
+            obj.index +=0.1;
         //}, 1000);
 
 //设置跳跃的时候更换为jump的样式。
