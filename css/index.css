@@ -320,7 +320,10 @@ div.btn{
 .jump {
     background: url("../images/userDumpRight.png") no-repeat center center;
     background-size: contain;
+    -webkit-animation: _jump 1.5s;
     animation: _jump 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 @keyframes _jump {
     50% {
