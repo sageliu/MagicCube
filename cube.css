@@ -21,6 +21,9 @@ ul, li {
     margin-left: -320px;
     -webkit-transform-origin: top;
     transform-origin: top;
+            -moz-transform-origin: top;
+            -ms-transform-origin: top;
+            -o-transform-origin: top;
 }
 .cube {
     width: 640px;
@@ -46,6 +49,13 @@ ul, li {
     transform-origin: 255px 255px -255px;
     -webkit-transform: scale(0.2) rotateX(-135deg) rotateY(180deg);
     -webkit-transition: 1s;
+ 
+            -moz-transform: scale(0.2) rotateX(-135deg) rotateY(180deg);
+            -ms-transform: scale(0.2) rotateX(-135deg) rotateY(180deg);
+            -o-transform: scale(0.2) rotateX(-135deg) rotateY(180deg);
+            -moz-transition: 1s;
+            -ms-transition: 1s;
+            -o-transition: 1s;
 }
 
 .cubeBox li {
@@ -65,6 +75,12 @@ ul, li {
     left: 510px;
     -webkit-transform: rotateY(90deg);
     -webkit-transform-origin: left;
+            -moz-transform: rotateY(90deg);
+            -ms-transform: rotateY(90deg);
+            -o-transform: rotateY(90deg);
+            -moz-transform-origin: left;
+            -ms-transform-origin: left;
+            -o-transform-origin: left;
 }
 
 .cubeBox li:nth-child(3) {
@@ -72,6 +88,12 @@ ul, li {
     left: -510px;
     -webkit-transform: rotateY(-90deg);
     -webkit-transform-origin: right;
+            -moz-transform: rotateY(-90deg);
+            -ms-transform: rotateY(-90deg);
+            -o-transform: rotateY(-90deg);
+            -moz-transform-origin: right;
+            -ms-transform-origin: right;
+            -o-transform-origin: right;
 }
 
 .cubeBox li:nth-child(4) {
@@ -79,6 +101,12 @@ ul, li {
     top: -510px;
     -webkit-transform: rotateX(90deg);
     -webkit-transform-origin: bottom;
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -o-transform: rotateX(90deg);
+            -moz-transform-origin: bottom;
+            -ms-transform-origin: bottom;
+            -o-transform-origin: bottom;
 }
 
 .cubeBox li:nth-child(5) {
@@ -86,9 +114,19 @@ ul, li {
     top: 510px;
     -webkit-transform: rotateX(-90deg);
     -webkit-transform-origin: top;
+            -moz-transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -o-transform: rotateX(-90deg);
+            -moz-transform-origin: top;
+            -ms-transform-origin: top;
+            -o-transform-origin: top;
+
 }
 
 .cubeBox li:nth-child(6) {
     background: url(images/6.jpg) no-repeat;
     -webkit-transform: translateZ(-510px);
+	    -moz-transform: translateZ(-510px);
+            -ms-transform: translateZ(-510px);
+            -o-transform: translateZ(-510px);
 }
